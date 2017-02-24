@@ -1,12 +1,12 @@
 <?php
 
 $dbhost = "localhost";
-$dbusername = "kimacces_dbuser";
-$dbpassword = "L3tsG0$@";
-$dbname = "kimacces_magento";
-$dbname2 = "kimacces_import";
-$conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname) or die('Could not connect');
-$conn2 = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname2) or die('Could not connect');
+$dbusername = "DBUSERNAME";
+$dbpassword = "DBPASSWORD";
+$dbname = "DB1NAME";
+$dbname2 = "DB2NAME";
+$conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname) or die('Connessione fallita');
+$conn2 = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname2) or die('Connessione fallita');
 
 function mysqli_result($result,$row,$field=0) {
 	if ($result===false) return false;
@@ -49,7 +49,8 @@ while($r=mysqli_fetch_array($q)){
 			$Articolo = strtoupper($expSku[1]);										// ARTICOLO SU SIZE
 			$DescrizioneColore = strtoupper($expSku[2]);
 			
-			//$DescrizioneColore = strtoupper(str_replace("-", " ", $expSku[2])); 	// DESCRIZIONE SU SIZE, RICAVARE IL CODICE
+			//$DescrizioneColore = strtoupper(str_replace("-", " ", $expSku[2]));
+			// DESCRIZIONE SU SIZE, RICAVARE IL CODICE
 			$Taglia = $expSku[3];
 			
 			$qColore = mysqli_query($conn2,"SELECT CodiceColore FROM Colori_Desc_Art WHERE Fornitore='$Fornitore' AND Articolo='$Articolo' AND DescrizioneColore='$DescrizioneColore'");
