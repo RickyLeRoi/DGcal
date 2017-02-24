@@ -1,10 +1,10 @@
 <?php
 
 $host = "localhost";
-$user = "kimacces_dbuser";
-$pass = "L3tsG0$@";
-$db1 = "kimacces_magento";
-$db2 = "kimacces_import";
+$user = "DBUSERNAME";
+$pass = "DBPASSWORD";
+$db1 = "DB1NAME";
+$db2 = "DB2NAME";
 $conn1 = mysqli_connect($host, $user, $pass, $db1) or die('niente');
 $conn2 = mysqli_connect($host, $user, $pass, $db2) or die('niente');
 
